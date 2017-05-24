@@ -17,16 +17,19 @@
         <div class="col-md-12">
     <h1 class="text-center"></h1>
         
-    <h2>Press any key to start save your life</h2>
+    <h2>Guess A Letter To <em>Try</em> and Save Your Life</h2>
 
-
-
+    <p>
+        <strong>
+        <span id="hiddenbook"></span>
+        </strong>
+    </p>
     <p>
     Wins
     </p>
 
     <p>
-    Number of Guesses Remaining
+    Number of Guesses Remaining:
     </p>
 
     <p>
@@ -45,15 +48,22 @@
     // Word Bank
 	var PoeBibliography = ["The Black Cat", "The Cask of Amontillado", "A Descent into the Maelstrom", "The Facts in the Case of M Valdemar", "The Fall of the House of Usher", "The Gold Bug", "Hop Frog", "The Imp of the Perverse", "Ligeia", "The Masque of the Red Death", "Morella", "The Murders in the Rue Morgue", "The Oval Portrait", "The Pit and the Pendulum", "The Premature Burial", "The Purloined Letter", "The System of Doctor Tarr and Professor Fether", "The Tell-Tale Heart"]; 
 
-    var selectedwork = PoeBibliography[Math.floor(Math.random() * PoeBibliography.length)];
+    // Gets selected work and prints it to lowercase
+    var selectedwork = PoeBibliography[Math.floor(Math.random() * PoeBibliography.length)].toLowerCase();
 
-    var answerArray = [];
-
-        for (var i = 0; i < PoeBibliography.length; i++){
-            answerArray[i]="_";
-        }
     console.log(selectedwork);
 
+    //Answers
+    var answerArray = [];
+
+        for (var i = 0; i < selectedwork.length; i++){
+            answerArray[i]= "<img src=assets/images/bricks.png>";
+        }
+
+    var remainingLetters = selectedwork.length;
+    console.log (remainingLetters)
+
+document.getElementById("hiddenbook").innerHTML = answerArray;
 
 
 </script>
